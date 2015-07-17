@@ -1,8 +1,8 @@
 {
-  "name": "drd-plus/properties",
+  "name": "drd-plus/tools",
   "license": "MIT",
   "type": "project",
-  "description": "Drd+ properties",
+  "description": "Drd+ tools",
   "autoload": {
     "psr-4": {
       "DrdPlus\\": "DrdPlus/"

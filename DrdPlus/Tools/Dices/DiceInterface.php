@@ -1,15 +1,7 @@
 <?php
 namespace DrdPlus\Tools\Dices;
 
-interface DiceInterface
+interface DiceInterface extends \Drd\DiceRoll\DiceInterface
 {
-    /**
-     * @return int
-     */
-    public function getMinimum();
 
-    /**
-     * @return int
-     */
-    public function getMaximum();
 }

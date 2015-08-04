@@ -25,7 +25,7 @@ class Dice extends StrictObject implements DiceInterface
      */
     private $maximum;
 
-    public function __construct(DiceInterface $dice)
+    public function __construct(\Drd\DiceRoll\DiceInterface $dice)
     {
         $this->minimum = $dice->getMinimum()->getValue();
         $this->maximum = $dice->getMaximum()->getValue();

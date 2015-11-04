@@ -1,9 +1,10 @@
 <?php
 namespace DrdPlus\Tools\Dices;
 
+use Drd\DiceRoll\RollInterface;
 use Granam\Strict\Object\StrictObject;
 
-class Roll extends StrictObject
+class Roll extends StrictObject implements RollInterface
 {
 
     /**
@@ -39,7 +40,7 @@ class Roll extends StrictObject
     /**
      * @return int
      */
-    public function getRollSummary()
+    public function getLastRollSummary()
     {
         return array_sum(
             array_map(

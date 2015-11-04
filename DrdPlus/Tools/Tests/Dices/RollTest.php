@@ -22,7 +22,7 @@ class RollTest extends TestWithMockery
     public function empty_dice_rolls_are_zero()
     {
         $roll = new Roll([]);
-        $this->assertSame(0, $roll->getRollSummary());
+        $this->assertSame(0, $roll->getLastRollSummary());
     }
 
     /**
@@ -55,6 +55,6 @@ class RollTest extends TestWithMockery
         $diceRoll2->shouldReceive('getEvaluatedValue')
             ->once()
             ->andReturn($diceRoll2Value = 456);
-        $this->assertSame($diceRoll1Value + $diceRoll2Value, $roll->getRollSummary());
+        $this->assertSame($diceRoll1Value + $diceRoll2Value, $roll->getLastRollSummary());
     }
 }

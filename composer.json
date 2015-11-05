@@ -13,6 +13,7 @@
     "granam/strict-object": "dev-master",
     "drd/dice-roll": "dev-master",
     "granam/integer": "dev-master",
+    "granam/float": "dev-master",
     "doctrine/orm": "~2.0"
   },
   "require-dev": {

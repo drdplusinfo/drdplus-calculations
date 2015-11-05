@@ -1,47 +1,79 @@
 <?php
 namespace DrdPlus\Tools\Numbers;
 
+use Granam\Float\Tools\ToFloat;
+
 class SumAndRound
 {
 
     /**
-     * @param float $number
+     * @param number $number
      *
      * @return int
      */
     public static function round($number)
     {
-        return intval(round($number));
+        return intval(round(ToFloat::toFloat($number)));
     }
 
     /**
-     * @param float $number
+     * @param number $number
      *
      * @return int
      */
     public static function floor($number)
     {
-        return intval(floor($number));
+        return intval(floor(ToFloat::toFloat($number)));
     }
 
     /**
-     * @param int $firstNumber
-     * @param int $secondNumber
+     * @param number $number
+     *
+     * @return int
+     */
+    public static function ceil($number)
+    {
+        return intval(ceil(ToFloat::toFloat($number)));
+    }
+
+    /**
+     * @param number $firstNumber
+     * @param number $secondNumber
      *
      * @return int
      */
     public static function average($firstNumber, $secondNumber)
     {
-        return self::round(($firstNumber + $secondNumber) / 2);
+        return self::round((ToFloat::toFloat($firstNumber) + ToFloat::toFloat($secondNumber)) / 2);
     }
 
     /**
-     * @param int $number
+     * @param number $number
      *
      * @return int
      */
     public static function half($number)
     {
-        return self::round($number / 2);
+        return self::round(ToFloat::toFloat($number) / 2);
+    }
+
+    /**
+     * @param number $number
+     *
+     * @return int
+     */
+    public static function flooredHalf($number)
+    {
+        return self::floor(ToFloat::toFloat($number) / 2);
+    }
+
+    /**
+     * @param number $number
+     *
+     * @return int
+     */
+    public static function ceiledHalf($number)
+    {
+        return self::ceil(ToFloat::toFloat($number) / 2);
     }
 }

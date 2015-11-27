@@ -76,4 +76,34 @@ class SumAndRound
     {
         return self::ceil(ToFloat::toFloat($number) / 2);
     }
+
+    /**
+     * @param number $number
+     *
+     * @return int
+     */
+    public static function third($number)
+    {
+        return self::round(ToFloat::toFloat($number) / 3);
+    }
+
+    /**
+     * @param number $number
+     *
+     * @return int
+     */
+    public static function flooredThird($number)
+    {
+        return self::floor(ToFloat::toFloat($number) / 3);
+    }
+
+    /**
+     * @param number $number
+     *
+     * @return int
+     */
+    public static function ceiledThird($number)
+    {
+        return self::ceil(ToFloat::toFloat($number) / 3);
+    }
 }

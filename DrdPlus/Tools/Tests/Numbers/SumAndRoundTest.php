@@ -53,7 +53,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_round_half_of_a_number()
+    public function I_can_get_round_half()
     {
         $number = 5;
         $this->assertSame(3, SumAndRound::half($number));
@@ -64,7 +64,20 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_ceiled_half_of_a_number()
+    public function I_can_get_floored_half()
+    {
+        $number = 5;
+        $this->assertSame(2, SumAndRound::flooredHalf($number));
+        $number = 4.0001;
+        $this->assertSame(2, SumAndRound::flooredHalf($number));
+        $number = 3.999999;
+        $this->assertSame(1, SumAndRound::flooredHalf($number));
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_ceiled_half()
     {
         $number = 5;
         $this->assertSame(3, SumAndRound::ceiledHalf($number));
@@ -72,5 +85,44 @@ class SumAndRoundTest extends TestWithMockery
         $this->assertSame(3, SumAndRound::ceiledHalf($number));
         $number = 4;
         $this->assertSame(2, SumAndRound::ceiledHalf($number));
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_third()
+    {
+        $number = 7.5;
+        $this->assertSame(3, SumAndRound::third($number));
+        $number = 2.9999;
+        $this->assertSame(1, SumAndRound::third($number));
+        $number = 1.49;
+        $this->assertSame(0, SumAndRound::third($number));
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_ceiled_third()
+    {
+        $number = 5;
+        $this->assertSame(2, SumAndRound::ceiledThird($number));
+        $number = 2.9999;
+        $this->assertSame(1, SumAndRound::ceiledThird($number));
+        $number = 98.7;
+        $this->assertSame(33, SumAndRound::ceiledThird($number));
+    }
+
+    /**
+     * @test
+     */
+    public function I_can_get_floored_third()
+    {
+        $number = 5;
+        $this->assertSame(1, SumAndRound::flooredThird($number));
+        $number = 2.9999;
+        $this->assertSame(0, SumAndRound::flooredThird($number));
+        $number = 99;
+        $this->assertSame(33, SumAndRound::flooredThird($number));
     }
 }

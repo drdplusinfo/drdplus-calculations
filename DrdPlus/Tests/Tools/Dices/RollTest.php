@@ -1,9 +1,9 @@
 <?php
-namespace DrdPlus\Tools\Tests\Dices;
+namespace DrdPlus\Tests\Tools\Dices;
 
 use DrdPlus\Tools\Dices\DiceRoll;
 use DrdPlus\Tools\Dices\Roll;
-use DrdPlus\Tools\Tests\TestWithMockery;
+use DrdPlus\Tests\Tools\TestWithMockery;
 
 class RollTest extends TestWithMockery
 {

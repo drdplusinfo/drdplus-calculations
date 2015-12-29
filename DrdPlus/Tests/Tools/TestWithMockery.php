@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Tools\Tests;
+namespace DrdPlus\Tests\Tools;
 
 class TestWithMockery extends \PHPUnit_Framework_TestCase
 {

@@ -19,7 +19,7 @@
         <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="false">
             <directory>./DrdPlus</directory>
             <exclude>
-                <directory>./DrdPlus/Tools/Tests</directory>
+                <directory>./DrdPlus/Tests</directory>
             </exclude>
         </whitelist>
     </filter>

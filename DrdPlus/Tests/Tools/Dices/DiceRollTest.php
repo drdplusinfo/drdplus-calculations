@@ -1,9 +1,9 @@
 <?php
-namespace DrdPlus\Tools\Tests\Dices;
+namespace DrdPlus\Tests\Tools\Dices;
 
 use Drd\DiceRoll\Dice;
 use DrdPlus\Tools\Dices\DiceRoll;
-use DrdPlus\Tools\Tests\TestWithMockery;
+use DrdPlus\Tests\Tools\TestWithMockery;
 use Granam\Integer\IntegerObject;
 
 class DiceRollTest extends TestWithMockery

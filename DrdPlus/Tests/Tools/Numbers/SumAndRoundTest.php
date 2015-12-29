@@ -1,8 +1,8 @@
 <?php
-namespace DrdPlus\Tools\Tests\Numbers;
+namespace DrdPlus\Tests\Tools\Numbers;
 
 use DrdPlus\Tools\Numbers\SumAndRound;
-use DrdPlus\Tools\Tests\TestWithMockery;
+use DrdPlus\Tests\Tools\TestWithMockery;
 
 class SumAndRoundTest extends TestWithMockery
 {

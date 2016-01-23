@@ -10,10 +10,10 @@ php:
 matrix:
   allow_failures:
     - php: nightly
-    - php: hhvm-nightly
 
 before_script:
-  - phpenv config-rm xdebug.ini
+  - $TRAVIS_PHP_VERSION =~ ^php \
+  && phpenv config-rm xdebug.ini
   - composer self-update
   - composer update --no-interaction --prefer-dist
 

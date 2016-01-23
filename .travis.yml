@@ -12,7 +12,7 @@ matrix:
     - php: nightly
 
 before_script:
-  - $TRAVIS_PHP_VERSION =~ ^php \
+  - test $TRAVIS_PHP_VERSION =~ ^php \
   && phpenv config-rm xdebug.ini
   - composer self-update
   - composer update --no-interaction --prefer-dist

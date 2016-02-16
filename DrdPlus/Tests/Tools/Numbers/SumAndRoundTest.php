@@ -2,7 +2,7 @@
 namespace DrdPlus\Tests\Tools\Numbers;
 
 use DrdPlus\Tools\Numbers\SumAndRound;
-use DrdPlus\Tests\Tools\TestWithMockery;
+use Granam\Tests\Tools\TestWithMockery;
 
 class SumAndRoundTest extends TestWithMockery
 {

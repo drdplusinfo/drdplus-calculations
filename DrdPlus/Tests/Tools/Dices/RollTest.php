@@ -3,7 +3,7 @@ namespace DrdPlus\Tests\Tools\Dices;
 
 use DrdPlus\Tools\Dices\DiceRoll;
 use DrdPlus\Tools\Dices\Roll;
-use DrdPlus\Tests\Tools\TestWithMockery;
+use Granam\Tests\Tools\TestWithMockery;
 
 class RollTest extends TestWithMockery
 {

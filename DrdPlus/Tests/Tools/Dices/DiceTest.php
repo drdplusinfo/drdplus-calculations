@@ -3,7 +3,7 @@ namespace DrdPlus\Tools\Enum;
 
 use Drd\DiceRoll\DiceInterface;
 use DrdPlus\Tools\Dices\Dice;
-use DrdPlus\Tests\Tools\TestWithMockery;
+use Granam\Tests\Tools\TestWithMockery;
 use Granam\Integer\IntegerObject;
 
 class DiceTest extends TestWithMockery

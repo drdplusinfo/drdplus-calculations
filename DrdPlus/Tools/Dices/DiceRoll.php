@@ -31,7 +31,7 @@ class DiceRoll extends StrictObject
      *
      * @ORM\Column(type="integer")
      */
-    private $evaluatedValue;
+    private $value;
 
     /**
      * @var int
@@ -45,7 +45,7 @@ class DiceRoll extends StrictObject
      *
      * @ORM\Column(type="integer")
      */
-    private $rollSequence;
+    private $sequenceNumber;
 
     /**
      * @param \Drd\DiceRoll\DiceRoll $diceRoll
@@ -53,9 +53,9 @@ class DiceRoll extends StrictObject
     public function __construct(\Drd\DiceRoll\DiceRoll $diceRoll)
     {
         $this->dice = DiceFactory::createDice($diceRoll->getDice());
-        $this->evaluatedValue = $diceRoll->getEvaluatedValue()->getValue();
+        $this->value = $diceRoll->getValue();
         $this->rolledNumber = $diceRoll->getRolledNumber()->getValue();
-        $this->rollSequence = $diceRoll->getRollSequence()->getValue();
+        $this->sequenceNumber = $diceRoll->getSequenceNumber()->getValue();
     }
 
     /**
@@ -77,17 +77,17 @@ class DiceRoll extends StrictObject
     /**
      * @return int
      */
-    public function getEvaluatedValue()
+    public function getValue()
     {
-        return $this->evaluatedValue;
+        return $this->value;
     }
 
     /**
      * @return int
      */
-    public function getRollSequence()
+    public function getSequenceNumber()
     {
-        return $this->rollSequence;
+        return $this->sequenceNumber;
     }
 
     /**

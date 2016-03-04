@@ -1,10 +1,11 @@
 <?php
 namespace DrdPlus\Tools\Dices;
 
-use Drd\DiceRoll\RollInterface;
+use Granam\Integer\IntegerInterface;
 use Granam\Strict\Object\StrictObject;
+use Granam\Tools\ValueDescriber;
 
-class Roll extends StrictObject implements RollInterface
+class Roll extends StrictObject implements IntegerInterface
 {
 
     /**
@@ -24,14 +25,9 @@ class Roll extends StrictObject implements RollInterface
     private function checkDiceRolls(array $diceRolls)
     {
         foreach ($diceRolls as $diceRoll) {
-            if (!is_object($diceRoll)) {
-                throw new \RuntimeException(
-                    'Given dice roll is not an object, but ' . gettype($diceRoll)
-                );
-            }
-            if (!is_a($diceRoll, DiceRoll::class)) {
-                throw new \RuntimeException(
-                    'Given dice roll is not an instance of DiceRoll, but ' . get_class($diceRoll)
+            if (!is_object($diceRoll) || !is_a($diceRoll, DiceRoll::class)) {
+                throw new Exceptions\InvalidDiceRoll(
+                    'Expected '. DiceRoll::class.', got ' . ValueDescriber::describe($diceRoll)
                 );
             }
         }
@@ -40,15 +36,23 @@ class Roll extends StrictObject implements RollInterface
     /**
      * @return int
      */
-    public function getLastRollSummary()
+    public function getValue()
     {
         return array_sum(
             array_map(
                 function (DiceRoll $diceRoll) {
-                    return $diceRoll->getEvaluatedValue();
+                    return $diceRoll->getValue();
                 },
                 $this->diceRolls
             )
         );
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)$this->getValue();
     }
 }

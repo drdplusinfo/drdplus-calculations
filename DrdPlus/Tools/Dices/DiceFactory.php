@@ -6,10 +6,10 @@ use Granam\Strict\Object\StrictObject;
 class DiceFactory extends StrictObject
 {
     /**
-     * @param \Drd\DiceRoll\DiceInterface $dice
+     * @param \Drd\DiceRoll\Dice $dice
      * @return Dice
      */
-    public static function createDice(\Drd\DiceRoll\DiceInterface $dice)
+    public static function createDice(\Drd\DiceRoll\Dice $dice)
     {
         return new Dice($dice);
     }

@@ -40,10 +40,7 @@ class DiceRollTest extends TestWithMockery
         $maximum->shouldReceive('getValue')
             ->atLeast()->once()
             ->andReturn(2);
-        $drdDiceRoll->shouldReceive('getEvaluatedValue')
-            ->atLeast()->once()
-            ->andReturn($evaluatedValue = $this->mockery(IntegerObject::class));
-        $evaluatedValue->shouldReceive('getValue')
+        $drdDiceRoll->shouldReceive('getValue')
             ->atLeast()->once()
             ->andReturn(1);
         $drdDiceRoll->shouldReceive('getRolledNumber')
@@ -52,10 +49,10 @@ class DiceRollTest extends TestWithMockery
         $rolledNumber->shouldReceive('getValue')
             ->atLeast()->once()
             ->andReturn(1);
-        $drdDiceRoll->shouldReceive('getRollSequence')
+        $drdDiceRoll->shouldReceive('getSequenceNumber')
             ->atLeast()->once()
-            ->andReturn($rollSequence = $this->mockery(IntegerObject::class));
-        $rollSequence->shouldReceive('getValue')
+            ->andReturn($sequenceNumber = $this->mockery(IntegerObject::class));
+        $sequenceNumber->shouldReceive('getValue')
             ->atLeast()->once()
             ->andReturn(1);
 
@@ -72,8 +69,8 @@ class DiceRollTest extends TestWithMockery
         $diceRoll = new DiceRoll($drdDiceRoll);
         $this->assertSame($drdDiceRoll->getDice()->getMaximum()->getValue(), $diceRoll->getDice()->getMaximum());
         $this->assertSame($drdDiceRoll->getDice()->getMinimum()->getValue(), $diceRoll->getDice()->getMinimum());
-        $this->assertSame($drdDiceRoll->getEvaluatedValue()->getValue(), $diceRoll->getEvaluatedValue());
+        $this->assertSame($drdDiceRoll->getValue(), $diceRoll->getValue());
         $this->assertSame($drdDiceRoll->getRolledNumber()->getValue(), $diceRoll->getRolledNumber());
-        $this->assertSame($drdDiceRoll->getRollSequence()->getValue(), $diceRoll->getRollSequence());
+        $this->assertSame($drdDiceRoll->getSequenceNumber()->getValue(), $diceRoll->getSequenceNumber());
     }
 }

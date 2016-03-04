@@ -14,6 +14,7 @@ class RollTest extends TestWithMockery
     {
         $roll = new Roll([]);
         $this->assertSame(0, $roll->getValue());
+        $this->assertSame('0', (string)$roll);
     }
 
     /**

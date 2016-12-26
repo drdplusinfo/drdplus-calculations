@@ -10,9 +10,8 @@
   },
   "require": {
     "php": ">=5.5.0",
+    "roave/security-advisories": "dev-master",
     "granam/strict-object": "dev-master",
-    "drd/dice-roll": "dev-master",
-    "granam/integer": "dev-master",
     "granam/float": "dev-master"
   },
   "require-dev": {

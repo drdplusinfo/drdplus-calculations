@@ -1,4 +1,4 @@
-# Standard calculations for DrD+
+# Standard calculations for [DrD+](http://www.altar.cz/drdplus/)
 
 [![Build Status](https://travis-ci.org/jaroslavtyc/drd-plus-tools.svg?branch=master)](https://travis-ci.org/jaroslavtyc/drd-plus-tools)
 [![Test Coverage](https://codeclimate.com/github/jaroslavtyc/drd-plus-tools/badges/coverage.svg)](https://codeclimate.com/github/jaroslavtyc/drd-plus-tools/coverage)

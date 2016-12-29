@@ -1,8 +1,13 @@
 {
-  "name": "drd-plus/tools",
+  "name": "drd-plus/calculations",
   "license": "MIT",
-  "type": "project",
-  "description": "Drd+ tools",
+  "type": "library",
+  "description": "Drd+ tools for calculations",
+  "keywords": [
+    "Drd+",
+    "rounding",
+    "sum"
+  ],
   "autoload": {
     "psr-4": {
       "DrdPlus\\": "DrdPlus/"

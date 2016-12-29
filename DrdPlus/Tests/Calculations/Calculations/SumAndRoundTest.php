@@ -1,7 +1,7 @@
 <?php
-namespace DrdPlus\Tests\Tools\Calculations;
+namespace DrdPlus\Tests\Calculations;
 
-use DrdPlus\Tools\Calculations\SumAndRound;
+use DrdPlus\Calculations\SumAndRound;
 use Granam\Tests\Tools\TestWithMockery;
 
 class SumAndRoundTest extends TestWithMockery

@@ -1,5 +1,5 @@
 <?php
-namespace DrdPlus\Tools\Calculations;
+namespace DrdPlus\Calculations;
 
 use Granam\Float\Tools\ToFloat;
 

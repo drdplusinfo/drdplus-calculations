@@ -7,6 +7,7 @@ class SumAndRound
 {
 
     /**
+     * See PPH page 11 left column, @link https://pph.drdplus.jaroslavtyc.com/?mode=dev&hide=covered#zaokrouhlovani
      * @param number $number
      * @return int
      */

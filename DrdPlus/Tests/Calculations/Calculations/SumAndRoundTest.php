@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1); // on PHP 7+ are standard PHP methods strict to types of given parameters
+
 namespace DrdPlus\Tests\Calculations;
 
 use DrdPlus\Calculations\SumAndRound;
@@ -9,7 +11,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_round_a_number()
+    public function I_can_round_a_number(): void
     {
         $shouldBeHigher = 4.5;
         $this->assertSame(5, SumAndRound::round($shouldBeHigher));
@@ -20,7 +22,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_floor_a_number()
+    public function I_can_floor_a_number(): void
     {
         $almostHigherInteger = 5.999999;
         $this->assertSame(5, SumAndRound::floor($almostHigherInteger));
@@ -29,7 +31,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_ceil_a_number()
+    public function I_can_ceil_a_number(): void
     {
         $almostHigherInteger = 5.999999;
         $this->assertSame(6, SumAndRound::ceil($almostHigherInteger));
@@ -40,7 +42,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_round_average_of_two_numbers()
+    public function I_can_get_round_average_of_two_numbers(): void
     {
         $firstNumber = 1.5123;
         $secondNumber = 2.5123;
@@ -53,7 +55,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_round_half()
+    public function I_can_get_round_half(): void
     {
         $number = 5;
         $this->assertSame(3, SumAndRound::half($number));
@@ -64,7 +66,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_floored_half()
+    public function I_can_get_floored_half(): void
     {
         $number = 5;
         $this->assertSame(2, SumAndRound::flooredHalf($number));
@@ -77,7 +79,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_ceiled_half()
+    public function I_can_get_ceiled_half(): void
     {
         $number = 5;
         $this->assertSame(3, SumAndRound::ceiledHalf($number));
@@ -90,7 +92,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_third()
+    public function I_can_get_third(): void
     {
         $number = 7.5;
         $this->assertSame(3, SumAndRound::third($number));
@@ -103,7 +105,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_ceiled_third()
+    public function I_can_get_ceiled_third(): void
     {
         $number = 5;
         $this->assertSame(2, SumAndRound::ceiledThird($number));
@@ -116,7 +118,7 @@ class SumAndRoundTest extends TestWithMockery
     /**
      * @test
      */
-    public function I_can_get_floored_third()
+    public function I_can_get_floored_third(): void
     {
         $number = 5;
         $this->assertSame(1, SumAndRound::flooredThird($number));

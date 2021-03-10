@@ -3,7 +3,7 @@
 namespace DrdPlus\Tests\Calculations;
 
 use DrdPlus\Calculations\SumAndRound;
-use Granam\Tests\Tools\TestWithMockery;
+use Granam\TestWithMockery\TestWithMockery;
 
 class SumAndRoundTest extends TestWithMockery
 {
@@ -13,9 +13,9 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_round_a_number(): void
     {
         $shouldBeHigher = 4.5;
-        $this->assertSame(5, SumAndRound::round($shouldBeHigher));
+        self::assertSame(5, SumAndRound::round($shouldBeHigher));
         $shouldBeLower = 4.4;
-        $this->assertSame(4, SumAndRound::round($shouldBeLower));
+        self::assertSame(4, SumAndRound::round($shouldBeLower));
     }
 
     /**
@@ -24,7 +24,7 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_floor_a_number(): void
     {
         $almostHigherInteger = 5.999999;
-        $this->assertSame(5, SumAndRound::floor($almostHigherInteger));
+        self::assertSame(5, SumAndRound::floor($almostHigherInteger));
     }
 
     /**
@@ -33,9 +33,9 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_ceil_a_number(): void
     {
         $almostHigherInteger = 5.999999;
-        $this->assertSame(6, SumAndRound::ceil($almostHigherInteger));
+        self::assertSame(6, SumAndRound::ceil($almostHigherInteger));
         $integerAndBit = 8.0000001;
-        $this->assertSame(9, SumAndRound::ceil($integerAndBit));
+        self::assertSame(9, SumAndRound::ceil($integerAndBit));
     }
 
     /**
@@ -45,10 +45,10 @@ class SumAndRoundTest extends TestWithMockery
     {
         $firstNumber = 1.5123;
         $secondNumber = 2.5123;
-        $this->assertSame(2, SumAndRound::average($firstNumber, $secondNumber));
+        self::assertSame(2, SumAndRound::average($firstNumber, $secondNumber));
         $firstNumber = 0.49999;
         $secondNumber = 2.4999;
-        $this->assertSame(1, SumAndRound::average($firstNumber, $secondNumber));
+        self::assertSame(1, SumAndRound::average($firstNumber, $secondNumber));
     }
 
     /**
@@ -57,9 +57,9 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_get_round_half(): void
     {
         $number = 5;
-        $this->assertSame(3, SumAndRound::half($number));
+        self::assertSame(3, SumAndRound::half($number));
         $number = 4.99;
-        $this->assertSame(2, SumAndRound::half($number));
+        self::assertSame(2, SumAndRound::half($number));
     }
 
     /**
@@ -68,11 +68,11 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_get_floored_half(): void
     {
         $number = 5;
-        $this->assertSame(2, SumAndRound::flooredHalf($number));
+        self::assertSame(2, SumAndRound::flooredHalf($number));
         $number = 4.0001;
-        $this->assertSame(2, SumAndRound::flooredHalf($number));
+        self::assertSame(2, SumAndRound::flooredHalf($number));
         $number = 3.999999;
-        $this->assertSame(1, SumAndRound::flooredHalf($number));
+        self::assertSame(1, SumAndRound::flooredHalf($number));
     }
 
     /**
@@ -81,11 +81,11 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_get_ceiled_half(): void
     {
         $number = 5;
-        $this->assertSame(3, SumAndRound::ceiledHalf($number));
+        self::assertSame(3, SumAndRound::ceiledHalf($number));
         $number = 4.0001;
-        $this->assertSame(3, SumAndRound::ceiledHalf($number));
+        self::assertSame(3, SumAndRound::ceiledHalf($number));
         $number = 4;
-        $this->assertSame(2, SumAndRound::ceiledHalf($number));
+        self::assertSame(2, SumAndRound::ceiledHalf($number));
     }
 
     /**
@@ -94,11 +94,11 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_get_third(): void
     {
         $number = 7.5;
-        $this->assertSame(3, SumAndRound::third($number));
+        self::assertSame(3, SumAndRound::third($number));
         $number = 2.9999;
-        $this->assertSame(1, SumAndRound::third($number));
+        self::assertSame(1, SumAndRound::third($number));
         $number = 1.49;
-        $this->assertSame(0, SumAndRound::third($number));
+        self::assertSame(0, SumAndRound::third($number));
     }
 
     /**
@@ -107,11 +107,11 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_get_ceiled_third(): void
     {
         $number = 5;
-        $this->assertSame(2, SumAndRound::ceiledThird($number));
+        self::assertSame(2, SumAndRound::ceiledThird($number));
         $number = 2.9999;
-        $this->assertSame(1, SumAndRound::ceiledThird($number));
+        self::assertSame(1, SumAndRound::ceiledThird($number));
         $number = 98.7;
-        $this->assertSame(33, SumAndRound::ceiledThird($number));
+        self::assertSame(33, SumAndRound::ceiledThird($number));
     }
 
     /**
@@ -120,10 +120,10 @@ class SumAndRoundTest extends TestWithMockery
     public function I_can_get_floored_third(): void
     {
         $number = 5;
-        $this->assertSame(1, SumAndRound::flooredThird($number));
+        self::assertSame(1, SumAndRound::flooredThird($number));
         $number = 2.9999;
-        $this->assertSame(0, SumAndRound::flooredThird($number));
+        self::assertSame(0, SumAndRound::flooredThird($number));
         $number = 99;
-        $this->assertSame(33, SumAndRound::flooredThird($number));
+        self::assertSame(33, SumAndRound::flooredThird($number));
     }
 }
